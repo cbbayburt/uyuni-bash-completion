@@ -14,18 +14,18 @@ _add_suffix() {
     esac
 }
 
-# Fills the completion array with channel labels that start with the word
+# Fills the completion array with the wordlist that start with the word
 # stored in the 'cur' variable
-# @: Array of channel labels
-_complete_channels() {
-    local channels
-    channels="$@"
-    channels=($(compgen -W "$channels" -- "${cur-}"))
-    if [ "${#channels[@]}" == "1" ]; then
+# @: The word list
+_complete_list() {
+    local wordlist
+    wordlist="$@"
+    wordlist=($(compgen -W "$wordlist" -- "${cur-}"))
+    if [ "${#wordlist[@]}" == "1" ]; then
         # Append a space if there is only one option
-        COMPREPLY=("${channels[0]} ")
+        COMPREPLY=("${wordlist[0]} ")
     else
-        COMPREPLY=(${channels[@]})
+        COMPREPLY=(${wordlist[@]})
     fi
 }
 
@@ -65,14 +65,14 @@ _spacewalk_remove_channel_completions() {
     # Complete channels
     if _is_option c channel; then
         cur="${cur#=}"
-        _complete_channels $(spacewalk-remove-channel --list | sed 's/\s+//')
+        _complete_list $(spacewalk-remove-channel --list | sed 's/\s+//')
         return
     fi
 
     # Complete base channels
     if _is_option a channel-with-children; then
         cur="${cur#=}"
-        _complete_channels $(spacewalk-remove-channel --list | grep '^\w')
+        _complete_list $(spacewalk-remove-channel --list | grep '^\w')
         return
     fi
 
