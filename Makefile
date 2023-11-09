@@ -6,7 +6,7 @@ TARGETS=mgr-create-bootstrap-repo mgr-sync spacewalk-common-channels \
 
 all: $(TARGETS)
 
-$(TARGETS): %: completions/%.bash completions/_common.bash | $(BUILDDIR)
+$(TARGETS): %: completions/_common.bash completions/%.bash | $(BUILDDIR)
 	cat $^ > $(BUILDDIR)/$@
 
 $(BUILDDIR):

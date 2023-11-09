@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 __mgr_sync_cmds="list add refresh delete sync"
 __mgr_sync_add_cmds="channels credentials products" # list, add
 __mgr_sync_delete_cmds="credentials"

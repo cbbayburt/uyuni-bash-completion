@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 __spacewalk_remove_channel_options="v:verbose l:list c:channel= a:channel-with-children=
     u:unsubscribe justdb force p:skip-packages skip-kickstart-trees just-kickstart-trees
     skip-channels username= password= h:help"
