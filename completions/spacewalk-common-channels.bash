@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 __spacewalk_common_channels_options="c:config= u:user= p:password= s:server= k:keys= n:dry-run
     a:archs= v:verbose l:list d:default-channels h:help"

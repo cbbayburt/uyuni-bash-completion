@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 __mgr_create_bootstrap_repo_options="h:help n:dryrun i:interactive l:list c:create= a:auto
     datamodule= d:debug f:flush no-flush force with-custom-channels with-parent-channel="
